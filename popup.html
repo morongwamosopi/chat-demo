@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot Popup</title>
+    <style>
+      /* Basic styling for chatbot button and dialog */
+      .chatbot-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #007bff;
+        color: white;
+        font-size: 30px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .chatbot-dialog {
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        width: 300px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+        z-index: 1000;
+      }
+
+      .chatbot-dialog header {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .chatbot-dialog .close-button {
+        background-color: #007bff;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .chatbot-dialog p {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Chatbot Button -->
+    <button class="chatbot-button" onclick="toggleChatbot()">💬</button>
+
+    <!-- Chatbot Dialog -->
+    <div class="chatbot-dialog" id="chatbotDialog">
+      <header>Chat with Us!</header>
+      <p>Hello! How can I help you today?</p>
+      <button class="close-button" onclick="toggleChatbot()">Close</button>
+    </div>
+
+    <script>
+      // Function to toggle the chatbot dialog
+      function toggleChatbot() {
+        const chatbotDialog = document.getElementById("chatbotDialog");
+        chatbotDialog.style.display =
+          chatbotDialog.style.display === "flex" ? "none" : "flex";
+      }
+    </script>
+  </body>
+</html>
